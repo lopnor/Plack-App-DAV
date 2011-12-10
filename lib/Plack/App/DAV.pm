@@ -9,7 +9,7 @@ use Filesys::Virtual::Plain;
 
 use Plack::Util::Accessor qw(root dbobj);
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub prepare_app {
     my $self = shift;
@@ -72,17 +72,17 @@ Document root directory. Defaults to the current directory.
 class specification and instanciate arguments for Net::DAV::LockManager.
 Defaults to 'Simple', makes Net::DAV::LockManager::Simple instance.
 
-  my $app = Plack::App::DAV->new;
+  my $app = Plack::App::DAV->new->to_app;
 
 is identical to the below.
 
-  my $app = Plack::App::DAV->new(dbobj => 'Simple');
+  my $app = Plack::App::DAV->new(dbobj => 'Simple')->to_app;
 
 To make LockManager with sqlite DB, write
 
   my $app = Plack::App::DAV->new(
       dbobj => [DB => 'dbi:sqlite:lockdb.sqlite3']
-  );
+  )->to_app;
 
 =back
 

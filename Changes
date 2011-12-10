@@ -1,5 +1,8 @@
 Revision history for Perl extension Plack::App::DAV
 
+0.03    Sat Dec 10 21:30:00 2011
+        - fix pod
+
 0.02    Fri Dec 09 07:23:00 2011
         - support dbojb option (thanks to iakuf)
 
